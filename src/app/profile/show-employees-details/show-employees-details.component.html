@@ -1,0 +1,38 @@
+
+{{token|json}}
+{{token2|json}}
+{{token3|json}}
+<mat-card class="card">
+    <mat-card-title>
+        show-employees-details
+    </mat-card-title>
+    <mat-card-subtitle>
+      There all Employees Details.
+    </mat-card-subtitle>
+
+<br>
+  <table class="table table-striped ">
+    <tr>
+        <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th></th>
+      <th></th>
+      <th></th>
+     
+    </tr>
+  
+    <tr *ngFor="let i of result;">
+      <td>{{i.empId}}</td>
+      <td>{{i.empName}}</td>
+      <td>{{i.empEmail}}</td>
+      <td>{{i.empAddress}}</td>
+      <td><button type="button" id="details" class="btn btn-default" (click)=detailsemployee(i.empId)>Details</button></td>
+            <td><button type="button" id="update" class="btn btn-success" >Update</button></td>
+            <td><button type="button" id="delete" class="btn btn-danger" (click)=deleteEmployee(i.empId)>Delete</button></td>
+         
+     
+    </tr>
+  </table>
+  </mat-card>

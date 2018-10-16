@@ -1,0 +1,37 @@
+
+
+<div style="text-align:center">
+    <div class="titleBar">
+            <h1 >
+                    Event Orginizing System!
+                  </h1>
+    </div>
+ 
+  <div *ngIf="logged; then thenBlock else elseBlock" ></div>
+    <ng-template #thenBlock>
+        <app-logged-header></app-logged-header>
+    </ng-template>
+    <ng-template #elseBlock>
+        <app-loging-header></app-loging-header>
+    </ng-template>
+
+
+    <div class="row ">
+            <div class="col-2 side">
+                <br><br>
+                <app-sidenavbar></app-sidenavbar>
+                </div>
+        
+        <div class="col-8">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="col-2 side">
+        
+        </div>
+      </div>
+
+ 
+
+   
+
+

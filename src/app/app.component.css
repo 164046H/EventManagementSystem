@@ -1,0 +1,11 @@
+.titleBar{
+    background-color: darkslateblue;
+}
+.titleBar h1{
+    color: cyan;
+    text-shadow: aliceblue;
+}
+.navBar{
+    background-color: darkslateblue;
+}
+

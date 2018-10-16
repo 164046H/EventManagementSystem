@@ -1,0 +1,76 @@
+
+<mat-tab-group>
+    <mat-tab label="Users Login"> 
+<mat-card class="card">
+    <mat-card-title>
+      User Login Forms
+    </mat-card-title>
+    <mat-card-subtitle>
+      You can login this forms
+    </mat-card-subtitle>
+    
+      <h4 class="errormsg">{{Message}}</h4>
+    
+    
+  
+  <mat-card-content>
+<div class="container">
+    <form [formGroup]="loginForm" autocomplete="off" novalidate (ngSubmit)="createLogin(loginForm.value)">
+      <div class="form-horizontal well">
+  
+        <div class="form-group">
+            <div class="example-container">
+              <mat-form-field>
+                  <input matInput placeholder="Enter Id" type="text" formControlName="id" id="id" />
+       
+              </mat-form-field>
+            </div>
+          <div class="col-md-5">
+              <mat-error >
+                 <em *ngIf="validateControl('id') && hasError('id', 'required')">*Id is required</em>
+                   <em *ngIf="validateControl('id') && hasError('id', 'maxlength')">*Maximum allowed length is 6 characters.</em>
+              
+              </mat-error>
+          </div>
+        </div>
+  
+  
+        <div class="form-group">
+           
+            <div class="example-container">
+              <mat-form-field>
+                  <input matInput placeholder="Enter password" type="password" formControlName="pass" id="pass" />
+        
+              </mat-form-field>
+            </div>
+          <div class="col-md-5">
+            <mat-error >
+            <em *ngIf="validateControl('pass') && hasError('pass', 'required')">*name is required</em>
+            <em *ngIf="validateControl('pass') && hasError('pass', 'maxlength')">*Maximum allowed length is 100 characters.</em>
+          </mat-error>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="submit" class="btn btn-info" [disabled]="!loginForm.valid">Login</button>
+                <button type="button" class="btn btn-danger" (click)="redirectToOwnerList()">Cancel</button>
+              </div>
+            
+          </div>
+
+        
+      </div>
+    </form>
+</div>
+</mat-card-content> 
+</mat-card>/
+</mat-tab>
+<mat-tab label="Users SignUp">
+<app-signup-user></app-signup-user>
+
+</mat-tab>
+</mat-tab-group>      
+               
+            
+      
